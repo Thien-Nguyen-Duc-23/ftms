@@ -50,3 +50,18 @@ Route::post('change-password', [
     'as' => 'post_change_password',
     'uses' => 'EditProfile@postChangePassword'
 ])->middleware('checkLogin');
+
+Route::get('memberProfile/{id}',[
+	'as' => 'getMemberProfile',
+	'uses' => 'Home@getMemberProfile'
+])->middleware('checkLogin');
+
+Route::get('subject/{id}',[
+	'as' => 'getSubject',
+	'uses' => 'Home@getSubject'
+])->middleware('checkLogin');
+
+Route::post('task/{id}',[
+	'as' => 'postTask',
+	'uses' => 'Home@postTask'
+])->middleware('checkLogin');
